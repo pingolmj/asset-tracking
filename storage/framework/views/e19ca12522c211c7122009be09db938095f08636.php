@@ -1,5 +1,4 @@
-@extends('layouts.app')
-@section('content')
+<?php $__env->startSection('content'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,21 +12,23 @@
 		<div class="jumbotron">
 			<h1>Update Details</h1>
 
-			<form action="/updateimage/{{ $hardwares->id }}" method="POST" enctype="multipart/form-data">
-				{{ csrf_field() }}
-				{{ method_field('PUT')}}
+			<form action="/updateimage/<?php echo e($hardwares->id); ?>" method="POST" enctype="multipart/form-data">
+				<?php echo e(csrf_field()); ?>
+
+				<?php echo e(method_field('PUT')); ?>
+
 				
-				<input type="hidden" name="id" id="id" value="{{ $hardwares->id }}">
+				<input type="hidden" name="id" id="id" value="<?php echo e($hardwares->id); ?>">
 
 				<div class="form-group">
 					<label>Name</label>
-					<input type="text" name="name" class="form-control" value="{{ $hardwares->name }}" placeholder="Enter Name">
+					<input type="text" name="name" class="form-control" value="<?php echo e($hardwares->name); ?>" placeholder="Enter Name">
 				</div>
 	
 				<div class="form-group">
 
 					<label>Description</label>
-					<input type="text" name="description" class="form-control" value="{{ $hardwares->description }}" placeholder="Enter Description">
+					<input type="text" name="description" class="form-control" value="<?php echo e($hardwares->description); ?>" placeholder="Enter Description">
 				</div>
 
 				<div class="form-group">
@@ -43,19 +44,19 @@
 
 				<div class="input-group">
 					<div class="custom-file">
-					<input type="file" name="image" class="custom-file-input" value="{{ $hardwares->image }}">
+					<input type="file" name="image" class="custom-file-input" value="<?php echo e($hardwares->image); ?>">
 					<label class="custom-file-label">Choose file</label>
 					</div>
 				</div>
 
 				<div class="form-group">
 					<label>Model Number</label>
-					<input type="text" name="model_number" class="form-control" value="{{ $hardwares->model_number }}" placeholder="Enter Model Number">
+					<input type="text" name="model_number" class="form-control" value="<?php echo e($hardwares->model_number); ?>" placeholder="Enter Model Number">
 				</div>
 
 				<div class="form-group">
 					<label>Location</label>
-					<input type="text" name="location" class="form-control" value="{{ $hardwares->location }}" placeholder="Enter Location">
+					<input type="text" name="location" class="form-control" value="<?php echo e($hardwares->location); ?>" placeholder="Enter Location">
 				</div>
 
 				<div class="form-group">
@@ -75,4 +76,5 @@
 		</div>
 </body>
 </html>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\chis\resources\views/hardware/hardwareupdateform.blade.php ENDPATH**/ ?>

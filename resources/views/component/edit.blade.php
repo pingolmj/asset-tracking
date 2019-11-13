@@ -35,6 +35,7 @@
 			</div>
 			<div class="form-group">
 				<input type="submit" class="btn btn-primary" value="Update">
+				<a href="comp.index"><button class="btn btn-primary">Cancel</button></a>
 			</div>
 
 		{{Form::close()}}

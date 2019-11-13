@@ -8,7 +8,8 @@ use App\Hardware;
 class HardwareController extends Controller
 {
     public function index()
-    {
+    {   
+
         return view('hardware.hardware');
     }
 
@@ -23,7 +24,7 @@ class HardwareController extends Controller
         $hardware->model_number = $request->input('model_number');
         $hardware->location = $request->input('location');
         $hardware->status = $request->input('status');
-        
+                
         if($request->hasfile('image')) {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
@@ -37,6 +38,7 @@ class HardwareController extends Controller
 
         $hardware->save();
 
+
         return redirect('/hardwarepage')->with('hardwares',$hardware);
         
         
@@ -44,7 +46,7 @@ class HardwareController extends Controller
 
     public function display()
     {
-        $hardwares = Hardware::all();
+        $hardwares = Hardware::paginate(5);
         return view('hardware/hardwareform')->with('hardwares', $hardwares);
     }
 

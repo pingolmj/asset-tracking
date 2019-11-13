@@ -33,7 +33,12 @@ Route::put('/updateimage/{id}','HardwareController@update');
 
 Route::get('/deleteimage/{id}','HardwareController@delete');
 
+Route::post('/qr','QRController@index');
 
 
 
 
+
+
+
+ 

@@ -24,7 +24,7 @@
 			<tbody>
 			@foreach($components as $component)
 				<tr>
-					<td>{{$loop->iteration}}</td>
+					<td>{{$component->id}}</td>
 					<td>{{$component->name}}</td>
 					<td>{{$component->description}}</td>
 					<td>{{$component->category}}</td>
@@ -46,8 +46,13 @@
 					</td>
 				</tr>
 			@endforeach
+
 			</tbody>	
 		</table>
+	</div>
+	<div class="row">
+		<div class="col-12 d-flex justify-content-center">
+		{!! $components->appends(\Request::except('page'))->render() !!}
 	</div>
 
 @endsection

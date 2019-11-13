@@ -5,7 +5,6 @@
 		<h1>Submit Report</h1>
 
 		
-
 		@if(count($errors->all()))
 			@foreach($errors->all() as $error)
 				<div class="alert alert-danger">
@@ -27,14 +26,13 @@
 
 			<div class="form-group">
 					<label>Category</label>
-
 					<select name="category">
 					    <option value="Processing Devices">Processing Device</option>
 					    <option value="Memory Devices">Memory Devices</option>
 					    <option value="I/O Devices">I/O Devices</option>
 					    <option value="Storage Devices">Storage Devices</option>
   					</select>
-				</div>
+			</div>
 			
 			<div class="form-group">
 				{!! Form::text('model_number', null, ['class' => 'form-control', 'placeholder' => 'Please Enter Model Number'])!!}

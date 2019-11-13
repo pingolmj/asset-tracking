@@ -13,7 +13,7 @@ class CompController extends Controller
      */
     public function index()
     {
-        $components = Component::all();
+        $components = Component::paginate(5);
         return view('component.index',compact('components'));
     }
 
@@ -102,4 +102,5 @@ class CompController extends Controller
         $components->delete();
         return back();
     }
+    
 }
