@@ -21,13 +21,13 @@
 
 				<div class="form-group">
 					<label>Name</label>
-					<input type="text" name="name" class="form-control" value="{{ $hardwares->name }}" placeholder="Enter Name">
+					<input type="text" name="name" required class="form-control" value="{{ $hardwares->name }}" placeholder="Enter Name">
 				</div>
 	
 				<div class="form-group">
 
 					<label>Description</label>
-					<input type="text" name="description" class="form-control" value="{{ $hardwares->description }}" placeholder="Enter Description">
+					<input type="text" name="description" required class="form-control" value="{{ $hardwares->description }}" placeholder="Enter Description">
 				</div>
 
 				<div class="form-group">
@@ -50,12 +50,12 @@
 
 				<div class="form-group">
 					<label>Model Number</label>
-					<input type="text" name="model_number" class="form-control" value="{{ $hardwares->model_number }}" placeholder="Enter Model Number">
+					<input type="text" name="model_number" required class="form-control" value="{{ $hardwares->model_number }}" placeholder="Enter Model Number">
 				</div>
 
 				<div class="form-group">
 					<label>Location</label>
-					<input type="text" name="location" class="form-control" value="{{ $hardwares->location }}" placeholder="Enter Location">
+					<input type="text" name="location" required class="form-control" value="{{ $hardwares->location }}" placeholder="Enter Location">
 				</div>
 
 				<div class="form-group">
